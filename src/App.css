@@ -1,7 +1,30 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins'), url(./fonts/Poppins-LightItalic.ttf) format('truetype');
 }
+.App {
+  -webkit-user-select: none;
+  text-align: center;
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(65ch, 100%)
+    1fr;
+}
+.App > * {
+  grid-column: 2;
+}
+.full-bleed {
+  width: 100%;
+  grid-column: 1 / 4;
+}
+.stories {
+  justify-self: center;
+  -webkit-user-select: none;
+  max-width:100%;
+  overflow-x:hidden;
 
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -22,6 +45,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: Poppins;
 }
 
 .App-link {
